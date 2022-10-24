@@ -5,7 +5,7 @@ import 'package:pokedex_app/services/pokedex_api.dart';
 import 'package:pokedex_app/widgets/pokelist_item.dart';
 
 class PokemonList extends StatefulWidget {
-  const PokemonList({super.key});
+  PokemonList({super.key});
 
   @override
   State<PokemonList> createState() => _PokemonListState();
@@ -28,6 +28,7 @@ class _PokemonListState extends State<PokemonList> {
         if (snapshot.hasData) {
           List<PokemonModel> _list = snapshot.data!;
           return GridView.builder(
+            itemCount: _list.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount:
                     ScreenUtil().orientation == Orientation.portrait ? 2 : 3),

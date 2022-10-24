@@ -8,11 +8,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const AppTitle(),
-          Expanded(child: const PokemonList()),
-        ],
+      body: OrientationBuilder(
+        builder: (context, orientation) => Column(
+          children: [
+            const AppTitle(),
+            Expanded(child: PokemonList()),
+          ],
+        ),
       ),
     );
   }
